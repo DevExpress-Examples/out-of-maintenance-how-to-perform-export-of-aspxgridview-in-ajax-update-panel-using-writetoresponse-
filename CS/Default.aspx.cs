@@ -5,14 +5,14 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page {
     protected void Page_Init(object sender, EventArgs e) {
-        DevExpress.Web.ASPxClasses.ASPxWebControl.RegisterBaseScript(Page);//ASPxClientUtils
+        DevExpress.Web.ASPxWebControl.RegisterBaseScript(Page);//ASPxClientUtils
         RegisterPostBackControl();
     }
     private void RegisterPostBackControl() {
         ScriptManager sm = (ScriptManager)Page.Master.FindControl("ScriptManager1");
         sm.RegisterPostBackControl(ASPxPopupMenu1);
     }
-    protected void ASPxPopupMenu1_ItemClick(object source, DevExpress.Web.ASPxMenu.MenuItemEventArgs e) {
+    protected void ASPxPopupMenu1_ItemClick(object source, DevExpress.Web.MenuItemEventArgs e) {
         ASPxGridViewExporter1.WriteXlsToResponse();
     }
     protected void ASPxButton1_Click(object sender, EventArgs e) {

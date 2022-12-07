@@ -7,14 +7,14 @@ Partial Public Class _Default
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Init(ByVal sender As Object, ByVal e As EventArgs)
-        DevExpress.Web.ASPxClasses.ASPxWebControl.RegisterBaseScript(Page) 'ASPxClientUtils
+        DevExpress.Web.ASPxWebControl.RegisterBaseScript(Page) 'ASPxClientUtils
         RegisterPostBackControl()
     End Sub
     Private Sub RegisterPostBackControl()
         Dim sm As ScriptManager = CType(Page.Master.FindControl("ScriptManager1"), ScriptManager)
         sm.RegisterPostBackControl(ASPxPopupMenu1)
     End Sub
-    Protected Sub ASPxPopupMenu1_ItemClick(ByVal source As Object, ByVal e As DevExpress.Web.ASPxMenu.MenuItemEventArgs)
+    Protected Sub ASPxPopupMenu1_ItemClick(ByVal source As Object, ByVal e As DevExpress.Web.MenuItemEventArgs)
         ASPxGridViewExporter1.WriteXlsToResponse()
     End Sub
     Protected Sub ASPxButton1_Click(ByVal sender As Object, ByVal e As EventArgs)
